@@ -28,13 +28,13 @@ public class CategoryController {
  @PostMapping("/add")
   public ResponseEntity<String> add(@RequestBody Category category){
      categoryService.add(category);
-     return ResponseEntity.ok("added ok");
+     return ResponseEntity.ok("added category "+ category.getTitulo() + "succesfully");
  }
 
  @PutMapping("/update")
     public ResponseEntity<String> update(@RequestBody Category category, Long id){
      categoryService.update(category, id);
-     return ResponseEntity.ok("Updated Ok");
+     return ResponseEntity.ok("Updated " + category.getTitulo() + "succesfully");
 
  }
 
