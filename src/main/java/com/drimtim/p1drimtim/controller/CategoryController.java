@@ -31,15 +31,19 @@ public class CategoryController {
      return ResponseEntity.ok("added category "+ category.getTitulo() + "succesfully");
  }
 
- @PutMapping("/update")
-    public ResponseEntity<String> update(@RequestBody Category category, Long id){
+ @PutMapping("/update/{id}")
+    public ResponseEntity<String> update(@RequestBody Category category, @PathVariable Long id){
+     Optional<Category> getId = categoryService.buscarPorId(id);
+     if(getId.isPresent()){
+
+     }
      categoryService.update(category, id);
      return ResponseEntity.ok("Updated " + category.getTitulo() + "succesfully");
 
  }
 
- @DeleteMapping("/delete")
-    public ResponseEntity<String> delete(Long id){
+ @DeleteMapping("/delete/id")
+    public ResponseEntity<String> delete(@PathVariable Long id){
      categoryService.delete(id);
      return ResponseEntity.ok("category deleted");
  }

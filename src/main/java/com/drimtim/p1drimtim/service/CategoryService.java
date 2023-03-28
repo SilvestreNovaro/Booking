@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -40,4 +41,9 @@ public class CategoryService {
     public void delete(Long id){
         categoryRepository.deleteById(id);
     }
+
+    public Optional<Category> buscarPorId(Long id){
+    return categoryRepository.findById(id);
+    }
+
 }
