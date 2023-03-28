@@ -21,7 +21,7 @@ public class CategoryController {
 
  private final CategoryService categoryService;
 
- @GetMapping("/listar")
+ @GetMapping("/list")
  public List<Category> list() {
   return categoryService.list();
  }
