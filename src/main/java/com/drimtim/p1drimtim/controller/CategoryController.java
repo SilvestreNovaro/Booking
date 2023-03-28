@@ -42,8 +42,10 @@ public class CategoryController {
 
  }
 
- @DeleteMapping("/delete/id")
+ @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id){
+   Optional<Category> getId = categoryService.buscarPorId(id);
+   if(getId.isPresent())
      categoryService.delete(id);
      return ResponseEntity.ok("category deleted");
  }
