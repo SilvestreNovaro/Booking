@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 // Recordar que siempre es una interface y no una clase
 // el long lo puse en minuscula nose si cambia algo
 
-public interface CategoriaRepository extends JpaRepository<Categoria, long> {
+public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
 }

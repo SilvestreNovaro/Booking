@@ -21,7 +21,7 @@ public class CategoriaService {
         repository.save(categoria);
     }
 
-    public void update(Categoria categoria, long id){
+    public void updateById(Categoria categoria, long id){
         // acá va con exception porque te puede devolver un categoria o un exception, no estas
         // seguro si te va devolver una Categoría.
         repository.findById(id).orElseThrow(()-> new RuntimeException());

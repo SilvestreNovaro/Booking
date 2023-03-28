@@ -25,9 +25,9 @@ public class CategoriaController {
         return ResponseEntity.ok("La categoria" + categoria.getId() + categoria.getTitulo() + "ha sido creada");
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<String> update(@RequestBody long id, Categoria categoria){
-        service.update(categoria, id);
+    @PutMapping("/update/{id}")
+    public ResponseEntity<String> updateById(@PathVariable long id, @RequestBody Categoria categoria){
+        service.updateById(categoria, id);
         return ResponseEntity.ok("La categoria" + categoria.getId() + "ha sido actualizada");
     }
 
